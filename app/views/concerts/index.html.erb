@@ -2,7 +2,7 @@
 <ul>
   <% @concerts.each do |concert| %>
     <li>
-      <%= concert.name %> on <%= concert.date.strftime("%B %e, %Y") %> at <%= concert.venue %>
+      <%= link_to concert.name, concert_path(concert) %> on <%= concert.date.strftime("%B %e, %Y") %> at <%= concert.venue %>
     </li>
   <% end %>
 </ul>
