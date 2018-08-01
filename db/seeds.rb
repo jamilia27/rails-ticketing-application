@@ -17,11 +17,11 @@ Concert.destroy_all
     user6 = User.create(name: "Lauren Abrams", email: "labrams10@example.com", account_balance: 100, password: "password")
 
     concert1 = Concert.create(name: "Greta Van Fleet", date: Date.new(2018, 10, 4), genre: "rock", venue: "The Electric Factory")
-    concert2 = Concert.create(name: "The Disco Biscuits", date: Date.new(2018, 12, 29), genre: "trance-fusion", venue: "The Fillmore")
+    concert2 = Concert.create(name: "The Disco Biscuits", date: Date.new(2018, 12, 29), genre: "trance-fusion", venue: "The Fillmore Philadelphia")
     concert3 = Concert.create(name: "Rae Sremmurd", date: Date.new(2018, 9, 1), genre: "hip-hop", venue: "Union Transfer")
     concert4 = Concert.create(name: "STS9", date: Date.new(2018, 9, 1), genre: "trance-fusion", venue: "The Mann Center")
     concert5 = Concert.create(name: "Modern Baseball", date: Date.new(2018, 8, 31), genre: "rock", venue: "Union Transfer")
     concert6 = Concert.create(name: "Chris Lake", date: Date.new(2018, 11, 9), genre: "house", venue: "NOTO")
     concert7 = Concert.create(name: "Green Velvet", date: Date.new(2018, 8, 18), genre: "house", venue: "Coda")
-    concert8 = Concert.create(name: "Kamasi Washington", date: Date.new(2018, 11, 6), genre: "jazz", venue: "Electric Factory"),
+    concert8 = Concert.create(name: "Kamasi Washington", date: Date.new(2018, 11, 6), genre: "jazz", venue: "The Electric Factory"),
     concert9 = Concert.create(name: "Drake", date: Date.new(2018, 9, 20), genre: "hip-hop", venue: "Wells Fargo Center")
