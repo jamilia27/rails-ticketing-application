@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ConcertsController < ApplicationController
   def index
     @concerts = Concert.all
