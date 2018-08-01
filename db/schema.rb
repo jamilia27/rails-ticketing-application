@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_175957) do
   create_table "concerts", force: :cascade do |t|
     t.string "name"
     t.date "date"
-    t.string "denre"
+    t.string "genre"
     t.string "venue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
