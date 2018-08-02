@@ -5,12 +5,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:signin][:email].downcase)
-    if user && user.authenticate(params[:signin][:password])
+    if user&.authenticate(params[:signin][:password])
       session[:user_id] = user.id
       redirect_to user_path(user), notice: "Successfully logged in!"
     else
-      flash.now.alert = "Incorrect email or password, please try again."
-      render :new
+      unsucessful_login
     end
   end
 
@@ -18,4 +17,12 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     redirect_to root_path, notice: "Successfully logged out!"
   end
+
+private
+
+  def unsucessful_login
+    flash.now.alert = "Incorrect email or password, please try again."
+    render :new
+  end
+
 end

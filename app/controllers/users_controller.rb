@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Account created successfully!"
       redirect_to user_path(@user)
     else
-      flash.now[:alert] = "Could not create account. Please make sure you are using a valid email."
+      flash.now[:alert] = "Could not create account. " \
+      "Please make sure you areusing a valid email."
       render :new
     end
   end
