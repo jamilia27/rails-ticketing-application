@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   post "/buy_ticket", to: "tickets#buyticket"
-  resources :users, only: [:index, :create, :show]
+  resources :users, only: [:index, :create, :show] do
+    resources :tickets, only: :show
+  end
+
   resources :concerts
 end
