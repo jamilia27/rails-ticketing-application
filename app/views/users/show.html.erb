@@ -1,3 +1,4 @@
 <h2>Viewing <%= @user.name %>'s account</h2>
 
 <p>Account Balance: <%= @user.account_balance %>
+<%= link_to "View my tickets", user_tickets_path(current_user) %>

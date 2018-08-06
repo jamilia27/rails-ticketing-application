@@ -24,5 +24,4 @@ private
     flash.now.alert = "Incorrect email or password, please try again."
     render :new
   end
-
 end

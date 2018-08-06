@@ -1,13 +1,28 @@
 # frozen_string_literal: true
 
 class TicketsController < ApplicationController
+  before_action :authorize
+  def index
+    @user = User.find(params[:user_id])
+    @tickets = Ticket.users_tickets(@user)
+  end
+
+  def show
+    @ticket = Ticket.find_by(user_id: params[:user_id], id: params[:id])
+  end
+
   def create
     # debugger
-    ticket = current_user.tickets.build(price: params[:ticket][:price], concert_id: params[:concert_id])
+    ticket = current_user.tickets.build(ticket_params)
     ticket.save
     ticket.charge_user(current_user)
     redirect_to user_path(current_user)
   end
 
+private
 
+  def ticket_params
+    { price: params[:ticket][:price],
+      concert_id: params[:concert_id] }
+  end
 end

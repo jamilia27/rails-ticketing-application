@@ -3,16 +3,16 @@
 class Ticket < ApplicationRecord
   belongs_to :concert
   belongs_to :user
-
-  def self.ticket_prices
-    all.map do |ticket|
-      ticket.price
-    end
-  end
-
+  delegate :name, to: :concert, prefix: true
+  delegate :genre, to: :concert, prefix: true
+  delegate :venue, to: :concert, prefix: true
 
   def charge_user(user)
     user.account_balance -= price
     user.save
+  end
+
+  def self.users_tickets(user)
+    where(user: user)
   end
 end

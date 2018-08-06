@@ -1,0 +1,6 @@
+<h2>Viewing all <%= @user.name %>'s Tickets</h2>
+<ul>
+  <% @tickets.each do |ticket| %>
+    <li><%= link_to ticket.concert_name, user_ticket_path(ticket, user_id: @user) %></li>
+  <% end %>
+</ul>
