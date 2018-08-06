@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  post "/buy_ticket", to: "tickets#buyticket"
-  resources :users, only: [:index, :create, :show] do
-    resources :tickets, only: :show
+  resources :users, only: [:index, :create, :show]
+  resources :concerts do
+    resources :tickets, only: [:show, :index] do
+      collection do
+        post :buy_ticket
+      end
+    end
   end
-
-  resources :concerts
 end

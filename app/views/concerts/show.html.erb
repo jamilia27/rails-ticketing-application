@@ -3,3 +3,8 @@
 <p>Date: <%= @concert.formatted_date %></p>
 <p>Venue: <%= @concert.venue %></p>
 <p>Genre: <%= @concert.genre %></p>
+
+
+<%= form_tag("/concerts/#{@concert.id}/tickets/buy_ticket", method: "post") do %>
+  <%= submit_tag("Buy a ticket") %>
+<% end %>

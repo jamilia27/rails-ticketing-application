@@ -25,3 +25,5 @@ Concert.destroy_all
     concert7 = Concert.create(name: "Green Velvet", date: Date.new(2018, 8, 18), genre: "house", venue: "Coda")
     concert8 = Concert.create(name: "Kamasi Washington", date: Date.new(2018, 11, 6), genre: "jazz", venue: "The Electric Factory"),
     concert9 = Concert.create(name: "Drake", date: Date.new(2018, 9, 20), genre: "hip-hop", venue: "Wells Fargo Center")
+
+      concert1.ticket.build(price: 5)
