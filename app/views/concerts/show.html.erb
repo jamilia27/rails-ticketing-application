@@ -5,6 +5,12 @@
 <p>Genre: <%= @concert.genre %></p>
 
 
-<%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
-  <%= f.submit "Buy a ticket" %>
+<% if current_user.account_balance > @concert.ticket_prices.max %>
+  <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
+    <%= f.label "Select a price" %>
+    <%= f.select :price, @concert.ticket_prices %>
+    <%= f.submit "Buy a ticket" %>
+  <% end %>
+<% else %>
+  <%= flash[:alert] = "Account balance is less than minimum ticket price" %>
 <% end %>

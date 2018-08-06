@@ -7,4 +7,8 @@ class Concert < ApplicationRecord
   def formatted_date
     date.strftime("%B %e, %Y")
   end
+
+  def ticket_prices
+    (1..10).to_a
+  end
 end

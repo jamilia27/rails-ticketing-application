@@ -2,10 +2,10 @@
 
 class TicketsController < ApplicationController
   def create
-    debugger
-    ticket = current_user.tickets.build(price: params[:price], concert_id: params[:concert_id])
+    # debugger
+    ticket = current_user.tickets.build(price: params[:ticket][:price], concert_id: params[:concert_id])
     ticket.save
-    ticket.deduct_cost(current_user)
+    ticket.charge_user(current_user)
     redirect_to user_path(current_user)
   end
 
