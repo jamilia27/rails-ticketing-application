@@ -2,9 +2,10 @@
 
 class TicketsController < ApplicationController
   before_action :authorize
+
   def index
     @user = User.find(params[:user_id])
-    @tickets = Ticket.users_tickets(@user)
+    @tickets = Ticket.user_tickets(current_user)
   end
 
   def show
@@ -12,7 +13,6 @@ class TicketsController < ApplicationController
   end
 
   def create
-    # debugger
     ticket = current_user.tickets.build(ticket_params)
     ticket.save
     ticket.charge_user(current_user)
