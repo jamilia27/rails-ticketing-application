@@ -6,7 +6,7 @@ class Ticket < ApplicationRecord
   delegate :name, to: :concert, prefix: true
   delegate :genre, to: :concert, prefix: true
   delegate :venue, to: :concert, prefix: true
-  scope :user_tickets, -> (user) { where(user_id: user) }
+  scope :user_tickets, ->(user) { where(user_id: user) }
 
   def charge_user(user)
     user.account_balance -= price
