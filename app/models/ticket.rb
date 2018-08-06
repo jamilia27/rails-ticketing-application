@@ -4,7 +4,7 @@ class Ticket < ApplicationRecord
   belongs_to :concert
   belongs_to :user
 
-  def buy_a_ticket(user)
+  def deduct_cost(user)
     user.account_balance -= price
     user.save
   end
