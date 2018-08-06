@@ -11,10 +11,11 @@
 
   <body>
     <% if current_user %>
-      <%= "Logged in as #{current_user.name}" %> | <%= link_to "Your Account", user_path(current_user) %> | <%= link_to "Log Out", logout_path, method: :delete %>
+      <%= "Logged in as #{current_user.name}" %> | <%= link_to "Your Account", user_path(current_user) %> | <%= link_to "Log Out", logout_path, method: :delete %> |
     <% else %>
-      <%= link_to "Sign In", signin_path %>
+      <%= link_to "Sign In", signin_path %> | <%= link_to "Sign Up", new_user_path %> |
     <% end %>
+    <%= link_to "View All Concerts", concerts_path %>
 
     <% if alert %>
       <%= alert %>
