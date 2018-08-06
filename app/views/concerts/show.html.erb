@@ -5,6 +5,6 @@
 <p>Genre: <%= @concert.genre %></p>
 
 
-<%= form_tag("/concerts/#{@concert.id}/tickets/buy_ticket", method: "post") do %>
-  <%= submit_tag("Buy a ticket") %>
+<%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
+  <%= f.submit "Buy a ticket" %>
 <% end %>

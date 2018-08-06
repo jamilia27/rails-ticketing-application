@@ -7,5 +7,6 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find_by(id: params[:id])
+    @ticket = Ticket.new
   end
 end
