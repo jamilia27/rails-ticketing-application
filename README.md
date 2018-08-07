@@ -1,24 +1,11 @@
-# README
+# Ticketpower on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+With Ticketpower, you can browse and purchase tickets to upcoming concerts. A user can sign up or signin to view their account and tickets they have purchased. When finished, the user can log out to ensure theor account is kept safe.
 
-Things you may want to cover:
+* First, fork and clone this repo
 
-* Ruby version
+* In your terminal, run `bundle install`, then `rake db:migrate` and `rake db:seed`
 
-* System dependencies
+* Fire up your local server, using the `rails s` command and navigate to localhost:3000
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Enjoy using Ticketpower!
