@@ -15,7 +15,8 @@
       <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
         <%= f.label "Select a price" %>
         <%= f.select :price, @concert.ticket_prices %>
-        <%= f.submit "Buy a ticket", class: "btn btn-primary" %>
+        <br>
+        <%= f.submit "Buy a ticket", class: "btn btn-primary btn-sm" %>
       <% end %>
     <% else %>
       <%= "Account balance is less than ticket price" %>
