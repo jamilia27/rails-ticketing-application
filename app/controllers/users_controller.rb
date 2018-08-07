@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash.now[:alert] = "Could not create account. " \
-      "Please make sure you areusing a valid email."
+      "Please make sure you are using a valid email."
       render :new
     end
   end
