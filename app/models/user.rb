@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :account_balance, numericality: { greater_than_or_equal_to: 0 }
   has_many :tickets
   has_many :concerts, through: :tickets
 end

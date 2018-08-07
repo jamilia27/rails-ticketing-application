@@ -15,10 +15,10 @@ class TicketsController < ApplicationController
   def create
     ticket = current_user.tickets.build(ticket_params)
     if ticket.charge_user(current_user) && ticket.save
-
       redirect_to user_path(current_user)
     else
-      # redirect back to same page and display the error
+      redirect_to concert_path(params[:concert_id])
+      flash.now.alert = "You do not have enough credits to purchase this ticket."
     end
   end
 
