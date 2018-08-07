@@ -1,23 +1,21 @@
-<%= link_to "Back", concerts_path %>
+<div class="container">
+  <%= link_to "Back", concerts_path %>
 
-<h2>Information for <%= @concert.name %></h2>
+  <h2>Information for <%= @concert.name %></h2>
 
-<p>Date: <%= @concert.formatted_date %></p>
-<p>Venue: <%= @concert.venue %></p>
-<p>Genre: <%= @concert.genre %></p>
+  <p>Date: <%= @concert.formatted_date %></p>
+  <p>Venue: <%= @concert.venue %></p>
+  <p>Genre: <%= @concert.genre %></p>
 
-<% if current_user %>
-  <div class="container">
-    <div class="row">
-      <% if current_user.account_balance > @concert.ticket_prices.min %>
-        <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
-          <div class="col"><%= f.label "Select a price" %>
-          <%= f.select :price, @concert.ticket_prices %></div>
-          <div class="col"><%= f.submit "Buy a ticket" %></div>
-        <% end %>
-      </div>
-    </div>
-  <% else %>
-    <%= "Account balance is less than ticket price" %>
+  <% if current_user %>
+    <% if current_user.account_balance > @concert.ticket_prices.min %>
+      <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
+        <%= f.label "Select a price" %>
+        <%= f.select :price, @concert.ticket_prices %>
+        <%= f.submit "Buy a ticket", class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <%= "Account balance is less than ticket price" %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

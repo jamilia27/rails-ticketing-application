@@ -6,7 +6,7 @@
     <p>Account Balance: <%= @user.account_balance %></p>
   </div>
   <div class="col">
-    <%= link_to "View my tickets", user_tickets_path(current_user) %>
+    <%= link_to "View my tickets", user_tickets_path(current_user), class: "btn btn-sml" %>
   </div>
 </div>
 

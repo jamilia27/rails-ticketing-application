@@ -1,13 +1,15 @@
-<h2>Upcoming Concerts</h2>
-<ul class="list-group">
-  <% @concerts.each do |concert| %>
-    <li class="list-group-item">
-      <%= link_to concert.name, concert_path(concert) %> on <%= concert.formatted_date %> at <%= concert.venue %>
-    </li>
+<div class="container">
+  <h2>Upcoming Concerts</h2>
+  <ul class="list-group">
+    <% @concerts.each do |concert| %>
+      <li class="list-group-item">
+        <%= link_to concert.name, concert_path(concert) %> on <%= concert.formatted_date %> at <%= concert.venue %>
+      </li>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+  <% if current_user %>
+    <%= link_to "View my tickets", user_tickets_path(current_user) %>
   <% end %>
-</ul>
-<br>
-<br>
-<% if current_user %>
-  <%= link_to "View my tickets", user_tickets_path(current_user) %>
-<% end %>
+</div>

@@ -1,23 +1,25 @@
-<%= link_to "Back", user_tickets_path %>
-<br>
-<br>
+<div class="container">
+  <%= link_to "Back", user_tickets_path %>
+  <br>
+  <br>
 
 
-<table class="table table-sm">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Concert Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Concert Venue</th>
-      <th scope="col">Concert Date </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @ticket.concert_name %></td>
-      <td><%= @ticket.price %></td>
-      <td><%= @ticket.concert_venue %></td>
-      <td><%= @ticket.concert.formatted_date %></td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Concert Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Concert Venue</th>
+        <th scope="col">Concert Date </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @ticket.concert_name %></td>
+        <td><%= @ticket.price %></td>
+        <td><%= @ticket.concert_venue %></td>
+        <td><%= @ticket.concert.formatted_date %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
