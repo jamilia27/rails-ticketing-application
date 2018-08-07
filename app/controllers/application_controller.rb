@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def logged_in?
+    session[:user_id] ? true : false
+  end
+
   def authorize
-    return unless current_user.nil?
+    return unless logged_in? == false
     redirect_to signin_path, alert: "You must be logged in to view this page."
   end
 end
