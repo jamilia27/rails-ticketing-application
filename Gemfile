@@ -41,6 +41,7 @@ gem 'bcrypt'
 gem 'rubocop'
 
 gem 'bootstrap', '~> 4.1.3'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'jquery-rails'
 
 group :development, :test do

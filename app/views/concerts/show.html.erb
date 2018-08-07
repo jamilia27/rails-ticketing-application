@@ -6,13 +6,18 @@
 <p>Venue: <%= @concert.venue %></p>
 <p>Genre: <%= @concert.genre %></p>
 
-
-<% if current_user.account_balance > @concert.ticket_prices.min %>
-  <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
-    <%= f.label "Select a price" %>
-    <%= f.select :price, @concert.ticket_prices %>
-    <%= f.submit "Buy a ticket" %>
+<% if current_user %>
+  <div class="container">
+    <div class="row">
+      <% if current_user.account_balance > @concert.ticket_prices.min %>
+        <%= form_for(@ticket, url: concert_tickets_path(@concert)) do |f| %>
+          <div class="col"><%= f.label "Select a price" %>
+          <%= f.select :price, @concert.ticket_prices %></div>
+          <div class="col"><%= f.submit "Buy a ticket" %></div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <%= "Account balance is less than ticket price" %>
   <% end %>
-<% else %>
-  <%= "Account balance is less than ticket price" %>
 <% end %>
