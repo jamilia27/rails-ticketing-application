@@ -1,6 +1,7 @@
 <div class="container">
   <h2>Upcoming Concerts</h2>
-  <ul class="list-group">
+  <br>
+  <ul class="list-group-flush">
     <% @concerts.each do |concert| %>
       <li class="list-group-item">
         <%= link_to concert.name, concert_path(concert) %> on <%= concert.formatted_date %> at <%= concert.venue %>
@@ -8,8 +9,7 @@
     <% end %>
   </ul>
   <br>
-  <br>
   <% if current_user %>
-    <%= link_to "View my tickets", user_tickets_path(current_user) %>
+    <%= link_to "View my tickets", user_tickets_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
   <% end %>
 </div>

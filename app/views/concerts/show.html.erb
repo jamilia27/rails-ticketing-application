@@ -1,11 +1,14 @@
 <div class="container">
-  <%= link_to "Back", concerts_path %>
+  <%= link_to "Back", concerts_path, role: "button", class: "btn btn-primary btn-sm" %>
+  <br>
+  <br>
 
   <h2>Information for <%= @concert.name %></h2>
-
-  <p>Date: <%= @concert.formatted_date %></p>
-  <p>Venue: <%= @concert.venue %></p>
-  <p>Genre: <%= @concert.genre %></p>
+  <ul class="list-group-flush">
+    <li class="list-group-item">Date: <%= @concert.formatted_date %></li>
+    <li class="list-group-item">Venue: <%= @concert.venue %></li>
+    <li class="list-group-item">Genre: <%= @concert.genre %></li>
+  </ul>
 
   <% if current_user %>
     <% if current_user.account_balance >= @concert.ticket_prices.min %>
