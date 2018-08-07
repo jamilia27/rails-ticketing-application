@@ -1,7 +1,7 @@
 <h2>Upcoming Concerts</h2>
-<ul>
+<ul class="list-group">
   <% @concerts.each do |concert| %>
-    <li>
+    <li class="list-group-item">
       <%= link_to concert.name, concert_path(concert) %> on <%= concert.formatted_date %> at <%= concert.venue %>
     </li>
   <% end %>
