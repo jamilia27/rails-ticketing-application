@@ -1,15 +1,17 @@
 <div class="container">
   <h2>Welcome back to Ticketpower!</h2>
-  <h3>Please login below</h3>
+  <br>
 
   <%= form_for :signin do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true %>
-    <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br>
-    <%= f.submit "Login", class: "btn btn-primary"%>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, autofocus: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.submit "Login", class: "btn btn-primary btn-sm"%>
   <% end %>
 </div>
 
