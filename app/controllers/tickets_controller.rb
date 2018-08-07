@@ -14,9 +14,12 @@ class TicketsController < ApplicationController
 
   def create
     ticket = current_user.tickets.build(ticket_params)
-    ticket.save
-    ticket.charge_user(current_user)
-    redirect_to user_path(current_user)
+    if ticket.charge_user(current_user) && ticket.save
+
+      redirect_to user_path(current_user)
+    else
+      # redirect back to same page and display the error
+    end
   end
 
 private
