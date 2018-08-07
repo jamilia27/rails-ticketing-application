@@ -10,14 +10,16 @@
   </head>
 
   <body>
-<!--     <nav class="navbar navbar-dark bg-primary"> -->
-      <% if current_user %>
-        <%= "Logged in as #{current_user.name}" %> | <%= link_to "Your Account", user_path(current_user) %> | <%= link_to "Log Out", logout_path, method: :delete %> |
-      <% else %>
-        <%= link_to "Sign In", signin_path %> | <%= link_to "Sign Up", new_user_path %> |
-      <% end %>
-      <%= link_to "View All Concerts", concerts_path %>
-<!--   </nav> -->
+      <ul class="nav justify-content-end">
+        <% if current_user %>
+          <li class="nav-item"><%= link_to "Your Account", user_path(current_user), :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Log Out", logout_path, method: :delete, :class => "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Sign In", signin_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Sign Up", new_user_path, :class => "nav-link" %></li>
+        <% end %>
+        <li class="nav-item"><%= link_to "View All Concerts", concerts_path, :class => "nav-link" %></li>
+      </ul>
 
     <% if alert %>
       <div class="alert alert-danger" role="alert">
