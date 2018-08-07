@@ -26,4 +26,9 @@ Concert.destroy_all
     concert8 = Concert.create(name: "Kamasi Washington", date: Date.new(2018, 11, 6), genre: "jazz", venue: "The Electric Factory"),
     concert9 = Concert.create(name: "Drake", date: Date.new(2018, 9, 20), genre: "hip-hop", venue: "Wells Fargo Center")
 
-      concert1.ticket.build(price: 5)
+    katieticket1 = Ticket.create(price: 5, concert_id: 2, user_id: 1)
+    katieticket2 = Ticket.create(price: 2, concert_id: 4, user_id: 1)
+    ryanticket1 = Ticket.create(price: 5, concert_id: 2, user_id: 2)
+    ryanticket2 = Ticket.create(price: 5, concert_id: 8, user_id: 2)
+    ryanticket3 = Ticket.create(price: 6, concert_id: 8, user_id: 2)
+    laurenticket1 = Ticket.create(price: 8, concert_id: 4, user_id: 6)
