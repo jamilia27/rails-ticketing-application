@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
   def create
     ticket = Ticket.new(ticket_params)
 
-    if ticket.purchase
+    if ticket.save
       redirect_to user_path(current_user)
     else
       flash.now.alert = "You do not have enough credits" \

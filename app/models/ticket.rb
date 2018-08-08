@@ -8,20 +8,15 @@ class Ticket < ApplicationRecord
   validates :concert, presence: true
   validates :user, presence: true
 
+  before_save :charge_user, on: :create
+
   delegate :name, to: :concert, prefix: true
   delegate :genre, to: :concert, prefix: true
   delegate :venue, to: :concert, prefix: true
 
   scope :user_tickets, ->(user) { where(user_id: user) }
 
-  def purchase
-    transaction do
-      charge_user
-      save!
-    end
-  end
-
-protected
+private
 
   def charge_user
     user.account_balance -= price
