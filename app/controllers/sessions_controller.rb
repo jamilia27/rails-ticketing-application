@@ -4,12 +4,12 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:signin][:email].downcase)
+    user = User.find_by(email: params[:signin][:email])
     if user&.authenticate(params[:signin][:password])
       session[:user_id] = user.id
       redirect_to user_path(user), notice: "Successfully logged in!"
     else
-      unsucessful_login
+      unsuccessful_login
     end
   end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
 private
 
-  def unsucessful_login
+  def unsuccessful_login
     flash.now.alert = "Incorrect email or password, please try again."
     render :new
   end
