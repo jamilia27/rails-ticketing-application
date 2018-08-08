@@ -13,15 +13,13 @@ class TicketsController < ApplicationController
   end
 
   def create
-    ticket = current_user.tickets.build(ticket_params)
-    ticket.transaction do
-      ticket.charge_user(current_user)
-      ticket.save
-    end
-    if ticket.persisted?
+    ticket = Ticket.new(ticket_params)
+
+    if ticket.purchase
       redirect_to user_path(current_user)
     else
-      flash.now.alert = "You do not have enough credits to purchase this ticket."
+      flash.now.alert = "You do not have enough credits" \
+      "to purchase this ticket."
       @concerts = Concert.all
       render "concerts/index"
     end
@@ -31,6 +29,7 @@ private
 
   def ticket_params
     { price: params[:ticket][:price],
-      concert_id: params[:concert_id] }
+      concert_id: params[:concert_id],
+      user: current_user }
   end
 end
