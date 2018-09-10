@@ -1,9 +1,0 @@
-<!-- <div class="container"> -->
-
-  <ul class="list-group tickets">
-    <% @tickets.each do |ticket| %>
-      <li class="list-group-item"><%= link_to ticket.concert_name, user_ticket_path(ticket, user_id: @user) %></li>
-    <% end %>
-  </ul>
-<!-- </div> -->
-
