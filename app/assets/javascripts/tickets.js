@@ -1,13 +1,13 @@
 $(function() {
   $('#load-tickets').on('click', function() {
-    var userId = $(this).data("id")
-    console.log(userId)
-    var ticketListItem = ""
-    $.get('/users/' + userId + '/tickets' + ".json", function(tickets) {
+    const userId = $(this).data("id")
+    let ticketListItem = ""
+    const url = '/users/' + userId + '/tickets' + ".json"
+    $.get(url, function(tickets) {
       tickets.forEach(function(ticket) {
-        ticketListItem += '<li class="ticketItem list-group-item" data-id="' + ticket["id"] + '">' + '<a href="' + userId + '/tickets/' + ticket["id"] + '">' + ticket["concert"]["name"] + '</a>'  + ticket["price"] + '</li>'
+        ticketListItem += '<li class="ticketItem list-group-item" data-id="' + ticket["id"] + '">' + '<a href="' + userId + '/tickets/' + ticket["concert_id"] + '">' + ticket["concert"]["name"] + '</a>'  + ticket["price"] + '</li>'
       })
-      $('.userTickets').html(ticketListItem)
+      $('.userTickets').append(ticketListItem)
     })
   })
 })
