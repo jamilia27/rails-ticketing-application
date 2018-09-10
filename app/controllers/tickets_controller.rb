@@ -2,10 +2,11 @@
 
 class TicketsController < ApplicationController
   before_action :authorize
+  before_action :set_user, only: [:index]
 
   def index
-    @user = User.find(current_user.id)
-    @tickets = Ticket.user_tickets(current_user)
+    debugger
+    @tickets = @user.tickets
   end
 
   def show
@@ -31,5 +32,9 @@ private
     { price: params[:ticket][:price],
       concert_id: params[:concert_id],
       user: current_user }
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
