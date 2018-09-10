@@ -5,8 +5,8 @@ class TicketsController < ApplicationController
   before_action :set_user, only: [:index]
 
   def index
-    debugger
     @tickets = @user.tickets
+    render json: @tickets
   end
 
   def show

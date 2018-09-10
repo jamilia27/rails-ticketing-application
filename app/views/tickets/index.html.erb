@@ -1,13 +1,9 @@
-<div class="container">
-  <%= link_to "Back", user_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
-  <br>
-  <br>
+<!-- <div class="container"> -->
 
-  <h2>Viewing all <%= @user.name %>'s Tickets</h2>
-  <ul class="list-group">
+  <ul class="list-group tickets">
     <% @tickets.each do |ticket| %>
       <li class="list-group-item"><%= link_to ticket.concert_name, user_ticket_path(ticket, user_id: @user) %></li>
     <% end %>
   </ul>
-</div>
+<!-- </div> -->
 
