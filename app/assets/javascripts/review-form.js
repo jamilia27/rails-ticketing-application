@@ -16,6 +16,10 @@
           else {
             alert("Try Again")
           }
+        });
+
+        posting.always(function() {
+          $('#new_review').trigger("reset");
         })
       })
       // $('#new_review').reset()

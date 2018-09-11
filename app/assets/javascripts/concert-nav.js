@@ -1,27 +1,29 @@
-$(function() {
+$(document).on("turbolinks:load", function() {
   $(".next-concert").on("click", function(e) {
     e.preventDefault()
     let nextId = parseInt($(".next-concert").attr("data-id")) + 1
     $.get('/concerts/' + nextId + '.json', function(concert) {
       $(".concertName").text(concert["name"])
-      $(".concertDate").text(concert["date"])
-      $(".concertGenre").text(concert["genre"])
-      $(".concertVenue").text(concert["venue"])
+      $(".concertDate").text("Date: " + moment(concert["date"], "YYYY-MM-DD").format("MMMM D, YYYY"));
+      $(".concertGenre").text("Genre: " + concert["genre"])
+      $(".concertVenue").text("Venue: " + concert["venue"])
 
       $(".next-concert").attr("data-id", concert["id"])
     })
   })
 })
 
-$(function() {
+$(document).on("turbolinks:load", function() {
   $(".previous-concert").on("click", function(e) {
     e.preventDefault()
+    // debugger
     let prevId = parseInt($(".previous-concert").attr("data-id")) - 1
         $.get('/concerts/' + prevId + '.json', function(concert) {
+          // debugger
       $(".concertName").text(concert["name"])
-      $(".concertDate").text(concert["date"])
-      $(".concertGenre").text(concert["genre"])
-      $(".concertVenue").text(concert["venue"])
+      $(".concertDate").text("Date: " + moment(concert["date"], "YYYY-MM-DD").format("MMMM D, YYYY"))
+      $(".concertGenre").text("Genre: " + concert["genre"])
+      $(".concertVenue").text("Venue: " + concert["venue"])
 
       $(".previous-concert").attr("data-id", concert["id"])
     })
