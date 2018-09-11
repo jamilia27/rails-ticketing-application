@@ -4,9 +4,10 @@ $(function() {
     const values = $(this).serialize()
     let posting = $.post('/reviews', values)
     // debugger
-    posting.done(function(data) {
-      debugger
-      // console.log(data)
+    posting.done(function(review) {
+      $(".reviewTitle").text(review["title"])
+      $(".reviewBody").text(review["body"])
+      $(".reviewedBy").text("Reviewed by: " + review["user"]["name"])
     })
   })
 })
