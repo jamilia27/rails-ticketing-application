@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
   root "static_pages#home"
   get "/signup", to: "users#new", as: "new_user"
   get "/signin", to: "sessions#new"
@@ -14,6 +15,7 @@ end
 
 
 # Rails.application.routes.draw do
+  resources :reviews
 #   root "static_pages#home"
 #   get "/signup", to: "users#new", as: "new_user"
 #   get "/signin", to: "sessions#new"

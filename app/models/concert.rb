@@ -2,6 +2,7 @@
 
 class Concert < ApplicationRecord
   has_many :tickets
+  has_many :reviews
   has_many :users, through: :tickets
 
   def formatted_date
