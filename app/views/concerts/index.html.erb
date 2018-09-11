@@ -10,6 +10,6 @@
   </ul>
   <br>
   <% if current_user %>
-    <%= link_to "View my tickets", user_tickets_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
+    <%= link_to "View my account", user_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
   <% end %>
 </div>
