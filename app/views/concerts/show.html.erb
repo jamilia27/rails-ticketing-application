@@ -21,5 +21,18 @@
     <% else %>
       <%= "Account balance is less than ticket price" %>
     <% end %>
+    <br>
+
+    <div class="concert-review">
+      <h3>Leave a Review!</h3>
+      <%= form_for @review do |f| %>
+        <%= f.label "Title" %>
+        <%= f.text_field :title %>
+        <%= f.label "Body" %>
+        <%= f.text_area :body %>
+        <br>
+        <%= f.submit %>
+      <% end %>
+    </div>
   <% end %>
 </div>
