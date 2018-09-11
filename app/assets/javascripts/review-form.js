@@ -6,7 +6,7 @@
         const values = $(this).serialize()
         let posting = $.post('/reviews', values)
         posting.done(function(review, status) {
-          console.log(status)
+          let newReview = new ReviewPresenter(review)
           // if (status === "success") {
             $(".reviewTitle").text(review["title"])
             $(".reviewBody").text(review["body"])
