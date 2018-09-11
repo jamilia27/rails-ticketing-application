@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def create
-
+    @review = Review.create(review_params)
+    render json: @review.to_json, status: 201
   end
 
 private
