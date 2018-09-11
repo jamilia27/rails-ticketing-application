@@ -6,8 +6,12 @@ class ConcertsController < ApplicationController
   end
 
   def show
-    @concert = Concert.find_by(id: params[:id])
     @ticket = Ticket.new
     @review = Review.new
+    @concert = Concert.find_by(id: params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @concert.to_json }
+    end
   end
 end

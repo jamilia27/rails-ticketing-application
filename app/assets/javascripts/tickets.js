@@ -1,4 +1,4 @@
-$(function() {
+$(document).on("turbolinks:load", function() {
   $('#load-tickets').on('click', function() {
     // e.preventDefault()
     // // alert("This fucking sucks")
