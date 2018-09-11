@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
 
   def index
     @tickets = @user.tickets
-    render json: @tickets.to_json(include: [:concert, :user])
+    render json: @tickets.to_json(include: [ concert: {only: [:name] }])
   end
 
   def show
