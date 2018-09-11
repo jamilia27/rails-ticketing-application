@@ -1,5 +1,7 @@
 $(function() {
   $('#load-tickets').on('click', function() {
+    // e.preventDefault()
+    // // alert("This fucking sucks")
     const userId = $(this).data("id")
     let ticketListItem = ""
     const url = '/users/' + userId + '/tickets' + ".json"
