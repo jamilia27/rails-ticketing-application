@@ -1,6 +1,6 @@
 // class newReview {
 //   appendReview() {
-    $(function() {
+    $(document).on("turbolinks:load", function() {
       $('#new_review').on("submit", function(e) {
         e.preventDefault()
         const values = $(this).serialize()
@@ -8,14 +8,14 @@
         // debugger
         posting.done(function(review, status) {
           console.log(status)
-          if (status === "success") {
+          // if (status === "success") {
             $(".reviewTitle").text(review["title"])
             $(".reviewBody").text(review["body"])
             $(".reviewedBy").text("Reviewed by: " + review["user"]["name"])
-          }
-          else {
-            alert("Try Again")
-          }
+          // }
+          // else {
+          //   alert("Try Again")
+          // }
         });
 
         posting.always(function() {
