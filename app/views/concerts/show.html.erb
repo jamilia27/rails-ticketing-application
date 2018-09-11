@@ -30,6 +30,8 @@
         <%= f.text_field :title %>
         <%= f.label "Body" %>
         <%= f.text_area :body %>
+        <%= f.hidden_field :concert_id, value: @concert.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <br>
         <%= f.submit %>
       <% end %>
