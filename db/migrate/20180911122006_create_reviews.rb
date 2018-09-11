@@ -3,8 +3,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
     create_table :reviews do |t|
       t.string :title
       t.string :body
-      t.integer :concert_id
-      t.integer :user_id
+      t.belongs_to :concert, foreign_key: true
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
