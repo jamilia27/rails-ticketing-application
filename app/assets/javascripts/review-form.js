@@ -5,7 +5,6 @@
         e.preventDefault()
         const values = $(this).serialize()
         let posting = $.post('/reviews', values)
-        // debugger
         posting.done(function(review, status) {
           console.log(status)
           // if (status === "success") {
@@ -22,7 +21,7 @@
           $('#new_review').trigger("reset");
         })
       })
-      // $('#new_review').reset()
+
     })
 //   }
 // }

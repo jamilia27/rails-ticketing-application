@@ -16,10 +16,9 @@ $(document).on("turbolinks:load", function() {
 $(document).on("turbolinks:load", function() {
   $(".previous-concert").on("click", function(e) {
     e.preventDefault()
-    // debugger
+
     let prevId = parseInt($(".previous-concert").attr("data-id")) - 1
         $.get('/concerts/' + prevId + '.json', function(concert) {
-          // debugger
       $(".concertName").text(concert["name"])
       $(".concertDate").text("Date: " + moment(concert["date"], "YYYY-MM-DD").format("MMMM D, YYYY"))
       $(".concertGenre").text("Genre: " + concert["genre"])
