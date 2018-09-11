@@ -1,9 +1,15 @@
 <div class="container">
-  <%= link_to "Back", concerts_path, role: "button", class: "btn btn-primary btn-sm" %>
+  <div class="row">
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-primary btn-sm previous-concert">&laquo; Previous</a>
+    </div>
+    <div class="col-sm-6">
+      <a href="#" class="btn btn-primary btn-sm next-concert">Next &raquo;</a>
+    </div>
+  </div>
   <br>
-  <br>
+    <h2>Information for <%= @concert.name %></h2>
 
-  <h2>Information for <%= @concert.name %></h2>
   <ul class="list-group-flush">
     <li class="list-group-item">Date: <%= @concert.formatted_date %></li>
     <li class="list-group-item">Venue: <%= @concert.venue %></li>
@@ -27,17 +33,17 @@
       <h3><strong>Leave a Review!</strong></h3>
       <div class="row">
         <%= form_for @review do |f| %>
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <%= f.label "Title " %>
             <%= f.text_field :title %>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <%= f.label "Body" %>
             <%= f.text_area :body %>
           </div>
           <%= f.hidden_field :concert_id, value: @concert.id %>
           <%= f.hidden_field :user_id, value: current_user.id %>
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <%= f.submit "Leave Review", class: "btn btn-primary btn-sm" %>
           </div>
         <% end %>
