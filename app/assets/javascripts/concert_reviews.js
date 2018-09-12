@@ -9,7 +9,8 @@ let loadConcertReviews = function() {
     $("#review-list").html("");
 
     concertReviews.forEach(function(concertReview) {
-      $("#review-list").append($(`<li>${concertReview.title}</li>`));
+      let reviewItem = new ReviewPresenter(concertReview)
+      $("#review-list").append(reviewItem.reviewFormatter());
     });
   });
 

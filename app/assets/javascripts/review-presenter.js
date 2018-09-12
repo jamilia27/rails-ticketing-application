@@ -15,11 +15,15 @@ class ReviewPresenter {
     return this.review.user.name
   }
 
+  reviewTime() {
+    return moment(this.review.created_at).format('LLL')
+  }
+
   reviewFormatter() {
     return `<li class ="list-group-item">
     <h4>${this.title()}</h4>
     <p>${this.body()}</p>
-    <p>By: ${this.userName()}</p>
+    <p>By: ${this.userName()} at ${this.reviewTime()}</p>
     </li>`
   }
 }
