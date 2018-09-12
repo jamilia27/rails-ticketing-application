@@ -12,17 +12,3 @@ $(document).on("turbolinks:load", function() {
     })
   })
 })
-
-
-//   // $('#new_review').on("submit", function(e) {
-//   //   e.preventDefault()
-//   //   debugger
-//   //   const values = $(this).serialize()
-//   //   let posting = $.post('/reviews', values)
-//   //   posting.done(function(review) {
-//   //     let thisReview = new ReviewPresenter(review)
-//   //   }
-//   //   posting.always(function() {
-//   //     $('#new_review').trigger("reset");
-//   //   })
-//   // })

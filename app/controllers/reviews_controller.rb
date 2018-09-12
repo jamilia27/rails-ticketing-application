@@ -10,7 +10,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
-    render json: @review.to_json(include: [user: { only: [:name] } ]), status: 201
+    render json: @review.to_json(
+      include: [user: { only: [:name] }]
+    ),
+           status: 201
   end
 
 private
