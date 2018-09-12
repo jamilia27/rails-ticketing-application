@@ -13,7 +13,7 @@ RSpec.describe Ticket, type: :model do
   end
 
   describe ".charge_user" do
-    it "subtracts the tickets price from the user's account balance and saves the user" do
+    it "subtracts the price from the user's account balance and saves the user" do
     end
   end
 end

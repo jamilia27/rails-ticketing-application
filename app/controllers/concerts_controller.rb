@@ -14,9 +14,9 @@ class ConcertsController < ApplicationController
 
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @concert.as_json.merge({review_url: reviews_path(concert_id: @concert.id)}) }
+      format.json { render json: @concert.as_json.merge(review_url: reviews_path(concert_id: @concert.id)) }
     end
   end
 end
 
- []
+[]
