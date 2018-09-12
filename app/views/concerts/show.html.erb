@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <%= link_to "Previous".html_safe, concert_path(@previous_concert), {class: "btn btn-primary btn-sm"} %>
-      <a href="#" class="btn btn-primary btn-sm previous-concert" data-id="<%= @concert.id %>">&laquo; Previous</a>
+    <div class="col-md-6">
+      <%= link_to "&laquo; Previous".html_safe, concert_path(@previous_concert), {class: "btn btn-primary btn-sm"} %>
     </div>
-    <div class="col-sm-6">
-      <a href="#" class="btn btn-primary btn-sm next-concert" data-id="<%= @concert.id %>">Next &raquo;</a>
-      <%= link_to "Next", concert_path(@next_concert) %>
+    <div class="col-md-6">
+      <%= link_to "Next &raquo;".html_safe, concert_path(@next_concert), {class: "btn btn-primary btn-sm"} %>
 
     </div>
   </div>
