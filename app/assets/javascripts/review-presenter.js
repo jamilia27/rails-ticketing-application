@@ -15,9 +15,16 @@ class ReviewPresenter {
     return this.review.user.name
   }
 
-  formatter() {
-    return `<h4>${this.title()}</h4>
+  reviewFormatter() {
+    return `<li class ="list-group-item">
+    <h4>${this.title()}</h4>
     <p>${this.body()}</p>
-    <p>Reviewed By: ${this.userName()}`
+    <p>By: ${this.userName()}</p>
+    </li>`
   }
 }
+
+
+// <h4>${this.title()}</h4>
+// <p>${this.body()}</p>
+// <p>Reviewed By: ${this.userName()}
