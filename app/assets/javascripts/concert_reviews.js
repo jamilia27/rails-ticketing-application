@@ -29,6 +29,8 @@ $(document).on("turbolinks:load", function() {
 
     posting.always(function() {
       $('#new_review').trigger("reset");
+      $("input[type='submit']").removeAttr('data-disable-with')
+      $("input[type='submit']").prop("disabled", false)
       loadConcertReviews();
     });
   });
