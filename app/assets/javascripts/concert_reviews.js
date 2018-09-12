@@ -15,7 +15,6 @@ let loadConcertReviews = function() {
   });
 
   concertReviewsRequest.always(function() {
-    console.log("We finshed trying to load concert reviews");
   });
 }
 

@@ -51,8 +51,10 @@
       </div>
     </div>
   <% end %>
+  <br>
 
-  <ol id="review-list" data-url="<%= reviews_path(concert_id: @concert.id) %>">
-  </ol>
+  <h3>Reviews for <%= @concert.name %></h3><br>
+  <ul id="review-list" class="list-group" data-url="<%= reviews_path(concert_id: @concert.id) %>">
+  </ul>
 
 </div>

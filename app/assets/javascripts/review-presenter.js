@@ -20,7 +20,7 @@ class ReviewPresenter {
   }
 
   reviewFormatter() {
-    return `<li class ="list-group-item">
+    return `<li class ="list-group-item list-group-item-secondary">
     <h4>${this.title()}</h4>
     <p>${this.body()}</p>
     <p>By: ${this.userName()} at ${this.reviewTime()}</p>
