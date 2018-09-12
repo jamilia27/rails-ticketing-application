@@ -4,14 +4,20 @@ class ReviewPresenter {
   }
 
   title() {
-    return this.title
+    return this.review.title
   }
 
   body() {
-    return this.body
+    return this.review.body
   }
 
   userName() {
-    return this.user.name
+    return this.review.user.name
+  }
+
+  formatter() {
+    return `<h4>${this.title()}</h4>
+    <p>${this.body()}</p>
+    <p>Reviewed By: ${this.userName()}`
   }
 }

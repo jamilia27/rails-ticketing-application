@@ -10,7 +10,6 @@ $(document).on("turbolinks:load", function() {
       tickets.forEach(function(ticket) {
 
         let ticketItem = new TicketPresenter(ticket)
-        // debugger
         $('.userTickets').append(ticketItem.ticketAttributes())
       })
     })
