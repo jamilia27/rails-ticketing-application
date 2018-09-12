@@ -7,6 +7,9 @@ $(document).on("turbolinks:load", function() {
       let reviewPost = new ReviewPresenter(review)
       $('#reviewDiv').append(reviewPost.formatter())
     })
+    posting.always(function() {
+      $('#new_review').trigger("reset")
+    })
   })
 })
 
