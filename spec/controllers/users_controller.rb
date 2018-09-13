@@ -1,6 +1,8 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe UsersController do
+RSpec.describe UsersController do
 
-#   describe ""
-# end
+  describe "" do
+
+  end
+end

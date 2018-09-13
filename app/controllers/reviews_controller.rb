@@ -10,17 +10,11 @@ class ReviewsController < ApplicationController
       include: [user: { only: %i[name] }]
     )
   end
-  # def index
-  #   user = current_user
-  #   binding.pry
-  #   @reviews = user.reviews
-  #   render json: @reviews.to_json, status: 201
-  # end
 
   def create
     @review = Review.create(review_params)
     render json: @review.to_json(
-      include: [user: { only: [:name] }]
+      include: [user: { only: %i[name] }]
     ),
            status: 201
   end
