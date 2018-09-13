@@ -18,5 +18,3 @@ class ConcertsController < ApplicationController
     end
   end
 end
-
-
