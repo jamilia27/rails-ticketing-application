@@ -8,5 +8,9 @@ RSpec.describe TicketsController, type: :controller do
       get :index, params: {user_id: user.id}
       expect(response.status).to eq(200)
     end
+    it "redirects to concerts index if not logged in" do
+     get :index, params: {user_id: 0}
+     expect(response).to redirect_to('/signin')
+    end
   end
 end
