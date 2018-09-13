@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TicketsController, type: :controller do
+RSpec.describe TicketsController do
   describe "GET #index" do
     it "shows all a users ticket's if logged in" do
       user = create(:user)
