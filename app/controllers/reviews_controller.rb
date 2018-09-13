@@ -3,8 +3,10 @@
 class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
-    @reviews = @reviews.where(concert_id: params["concert_id"]) if params["concert_id"].present?
-
+    if params["concert_id"].present?
+      @reviews = @reviews.where(concert_id:
+      params["concert_id"])
+    end
     render json: @reviews.to_json(
       only: %i[body created_at title],
       include: [user: { only: %i[name] }]
