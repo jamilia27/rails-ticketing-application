@@ -15,8 +15,8 @@ RSpec.describe Ticket, type: :model do
   describe ".charge_user" do
     it "subtracts the price from the user's account balance" do
       user = create(:user, id: 1, account_balance: 10)
+      concert = create(:concert, id: 1)
       ticket = create(:ticket, user_id: 1, concert_id: 1, price: 5)
-      ticket.charge_user
       expect(ticket.user.account_balance).to eq(5)
     end
   end
