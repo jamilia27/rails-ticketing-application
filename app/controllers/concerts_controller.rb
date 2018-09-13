@@ -19,4 +19,4 @@ class ConcertsController < ApplicationController
   end
 end
 
-[]
+
