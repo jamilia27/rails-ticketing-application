@@ -10,6 +10,7 @@ RSpec.describe TicketsController, type: :controller do
     end
     it "redirects to concerts index if not logged in" do
      get :index, params: {user_id: 0}
+     # Using invalid user_id to satisfy testing requirements for nested routes
      expect(response).to redirect_to('/signin')
     end
   end
