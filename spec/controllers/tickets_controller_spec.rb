@@ -13,4 +13,15 @@ RSpec.describe TicketsController, type: :controller do
      expect(response).to redirect_to('/signin')
     end
   end
+
+  describe "POST #create" do
+    it "creates a new ticket for a concert and a user when a user is logged in" do
+      user = create(:user)
+      session[:user_id] = user.id
+      concert = create(:concert)
+      expect{
+              create(:ticket, user_id: 1, concert_id: 1)
+            }.to change(Ticket, :count).by(1)
+    end
+  end
 end
